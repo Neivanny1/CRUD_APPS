@@ -1,0 +1,7 @@
+{
+    "DB_HOST": "localhost",
+    "DB_USER": "crud",
+    "DB_PASS": "",
+    "DB_NAME": "crud",
+    "SECRET_KEY": "^2lA8!#9Fz4@7qP*1sR$6uY0vXK@$*JH"
+  }

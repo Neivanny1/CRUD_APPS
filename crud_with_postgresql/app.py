@@ -2,14 +2,21 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import psycopg2 #pip install psycopg2 
 import psycopg2.extras
+import json
+
+"""
+Loading creds
+"""
+with open('conf.json', 'r') as file:
+    config_data = json.load(file)
  
 app = Flask(__name__)
 app.secret_key = "cairocoders-ednalan"
  
-DB_HOST = "localhost"
-DB_NAME = "sampledb"
-DB_USER = "postgres"
-DB_PASS = "admin"
+DB_HOST = config_data["DB_HOST"]
+DB_NAME = config_data["DB_NAME"]
+DB_USER = config_data["DB_USER"]
+DB_PASS = config_data["DB_PASS"]
  
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST)
  

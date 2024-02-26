@@ -1,5 +1,10 @@
---create user
-
+-- prepares a MySQL server for the project
+--create db name and user
+CREATE DATABASE IF NOT EXISTS `crud`;
+CREATE USER IF NOT EXISTS 'crud'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+GRANT ALL PRIVILEGES ON `crud`.* TO 'crud'@'localhost';
+GRANT SELECT ON `performance_schema`.* TO 'crud'@'localhost';
+FLUSH PRIVILEGES;
 --Crate database table
 CREATE TABLE students (
 	id serial PRIMARY KEY,

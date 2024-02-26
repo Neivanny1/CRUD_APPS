@@ -9,7 +9,7 @@ import json
 """
 Loading creds
 """
-with open('conf.json', 'r') as file:
+with open('config.json', 'r') as file:
     config_data = json.load(file)
  
 app = Flask(__name__)

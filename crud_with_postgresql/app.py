@@ -1,4 +1,6 @@
-#app.py
+'''
+Importing all required modeules
+'''
 from flask import Flask, render_template, request, redirect, url_for, flash
 import psycopg2 #pip install psycopg2 
 import psycopg2.extras
@@ -17,7 +19,9 @@ DB_HOST = config_data["DB_HOST"]
 DB_NAME = config_data["DB_NAME"]
 DB_USER = config_data["DB_USER"]
 DB_PASS = config_data["DB_PASS"]
- 
+'''
+Making a connection to postfresql
+''' 
 conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST)
  
 @app.route('/')
